@@ -7,6 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { overflow-x: hidden; }
+    .slides { width: 300%; } /* 3 images -> 300% */
+    .slides img { width: 100%; flex-shrink: 0; }
   </style>
 </head>
 <body class="bg-gray-50 font-sans">
@@ -90,13 +92,18 @@
     </div>
   </section>
 
-  <!-- Gallery -->
+  <!-- Gallery Slideshow -->
   <section id="gallery" class="p-6 sm:p-8 bg-purple-50 max-w-6xl mx-auto rounded-lg shadow my-6">
     <h3 class="text-2xl font-bold text-purple-900 mb-6">Gallery</h3>
-    <div class="grid md:grid-cols-3 gap-6">
-      <img src="image/hospital-interior.jpg" class="rounded-lg shadow" alt="Hospital Interior">
-      <img src="image/hospital-board.jpg" class="rounded-lg shadow" alt="Hospital Board">
-      <img src="image/doctor-yugender.jpg" class="rounded-lg shadow" alt="Dr. Yugender Reddy">
+    <div class="relative w-full overflow-hidden rounded-lg shadow-lg">
+      <div class="slides flex transition-transform duration-700">
+        <img src="image/hospital-interior.jpg" class="h-72 object-cover" alt="Hospital Interior">
+        <img src="image/hospital-board.jpg" class="h-72 object-cover" alt="Hospital Board">
+        <img src="image/doctor-yugender.jpg" class="h-72 object-cover" alt="Dr. Yugender Reddy">
+      </div>
+      <!-- Controls -->
+      <button onclick="prevSlide()" class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-purple-600 text-white px-3 py-2 rounded-full">‹</button>
+      <button onclick="nextSlide()" class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-purple-600 text-white px-3 py-2 rounded-full">›</button>
     </div>
   </section>
 
@@ -151,21 +158,21 @@
       nav.classList.toggle("flex");
       nav.classList.toggle("flex-col");
     }
-    function setLang(lang) {
-      // Translation script (like before) – you can extend it if needed
-      if (lang === "te") {
-        document.getElementById("title").innerText = "ఆశ్విని న్యూరో సూపర్ స్పెషాలిటీ హాస్పిటల్";
-        document.getElementById("welcome").innerText = "ఆశ్విని న్యూరో కి స్వాగతం";
-        document.getElementById("tagline").innerText = "సూపర్ స్పెషాలిటీ న్యూరో కేర్, అంకితభావంతో";
-        document.getElementById("aboutTitle").innerText = "మా గురించి";
-        document.getElementById("aboutText").innerText = "ఆశ్విని న్యూరో సూపర్ స్పెషాలిటీ హాస్పిటల్ (2012లో స్థాపించబడింది) న్యూరాలజీ విభాగంలో ప్రత్యేకమైన సేవలను అందిస్తోంది.";
-        document.getElementById("bookTitle").innerText = "ఓపీ బుక్ చేయండి";
-        document.getElementById("trackTitle").innerText = "ఓపీ ట్రాక్ చేయండి";
-        document.getElementById("contactTitle").innerText = "మమ్మల్ని సంప్రదించండి";
-      } else {
-        location.reload(); // reset to English
-      }
+
+    // Gallery Slideshow
+    let currentIndex = 0;
+    const slides = document.querySelector(".slides");
+    const totalSlides = slides.children.length;
+
+    function showSlide(index) {
+      if (index >= totalSlides) currentIndex = 0;
+      else if (index < 0) currentIndex = totalSlides - 1;
+      else currentIndex = index;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
+    function nextSlide() { showSlide(currentIndex + 1); }
+    function prevSlide() { showSlide(currentIndex - 1); }
+    setInterval(() => { nextSlide(); }, 4000);
   </script>
 
 </body>

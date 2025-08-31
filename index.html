@@ -9,12 +9,20 @@
 <body class="bg-gray-50 font-sans">
 
   <!-- Header -->
-  <header class="bg-purple-700 text-white p-4 flex justify-between items-center">
+  <header class="bg-purple-200 text-purple-900 p-4 flex justify-between items-center shadow">
     <div class="flex items-center space-x-3">
-      <!-- Correct Logo Path -->
       <img src="image/ashwini-logo.png" alt="Hospital Logo" class="h-12">
       <h1 class="text-xl font-bold" id="title">Ashwini Neuro Super Speciality Hospital</h1>
     </div>
+    <nav class="hidden md:flex space-x-6 font-semibold">
+      <a href="#home" class="hover:text-purple-600">Home</a>
+      <a href="#about" class="hover:text-purple-600">About</a>
+      <a href="#doctors" class="hover:text-purple-600">Doctors</a>
+      <a href="#services" class="hover:text-purple-600">Services</a>
+      <a href="#book" class="hover:text-purple-600">Book OP</a>
+      <a href="#track" class="hover:text-purple-600">Track OP</a>
+      <a href="#contact" class="hover:text-purple-600">Contact</a>
+    </nav>
     <div>
       <button onclick="setLang('en')" class="px-2 py-1 bg-white text-purple-700 rounded">EN</button>
       <button onclick="setLang('te')" class="px-2 py-1 bg-white text-purple-700 rounded">TE</button>
@@ -22,27 +30,68 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="text-center p-8 bg-purple-100">
-    <h2 class="text-3xl font-bold text-purple-800" id="welcome">Welcome to Ashwini Neuro</h2>
+  <section id="home" class="text-center p-10 bg-gradient-to-r from-purple-100 to-purple-50">
+    <h2 class="text-3xl font-bold text-purple-900" id="welcome">Welcome to Ashwini Neuro</h2>
     <p class="mt-2 text-gray-700" id="tagline">Super Speciality Neuro Care with Compassion</p>
     <div class="mt-6 space-x-4">
-      <a href="#book" class="px-6 py-3 bg-green-600 text-white rounded" id="bookBtn">Book OP</a>
-      <a href="#track" class="px-6 py-3 bg-blue-600 text-white rounded" id="trackBtn">Track OP</a>
+      <a href="#book" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg" id="bookBtn">Book OP</a>
+      <a href="#track" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg" id="trackBtn">Track OP</a>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="p-8 bg-white max-w-4xl mx-auto">
-    <h3 class="text-2xl font-bold text-purple-800 mb-4" id="aboutTitle">About Us</h3>
+  <section id="about" class="p-8 bg-white max-w-4xl mx-auto rounded-lg shadow my-6">
+    <h3 class="text-2xl font-bold text-purple-900 mb-4" id="aboutTitle">About Us</h3>
     <p class="text-gray-700" id="aboutText">
       Ashwini Neuro Super Speciality Hospital is dedicated to providing expert care in Neurology.
       Our doctors are highly experienced in treating a wide range of neuro conditions with advanced facilities.
     </p>
   </section>
 
+  <!-- Doctors -->
+  <section id="doctors" class="p-8 bg-purple-50 max-w-6xl mx-auto rounded-lg shadow my-6">
+    <h3 class="text-2xl font-bold text-purple-900 mb-6">Our Doctors</h3>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <img src="image/doctor1.jpg" class="mx-auto rounded-full h-24 w-24 mb-4" alt="Doctor">
+        <h4 class="font-bold">Dr. Ramesh</h4>
+        <p>Neurologist</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <img src="image/doctor2.jpg" class="mx-auto rounded-full h-24 w-24 mb-4" alt="Doctor">
+        <h4 class="font-bold">Dr. Sita</h4>
+        <p>Pediatric Neurology</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <img src="image/doctor3.jpg" class="mx-auto rounded-full h-24 w-24 mb-4" alt="Doctor">
+        <h4 class="font-bold">Dr. Arjun</h4>
+        <p>Neuro Surgery</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="p-8 bg-white max-w-6xl mx-auto rounded-lg shadow my-6">
+    <h3 class="text-2xl font-bold text-purple-900 mb-6">Our Services</h3>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+      <div class="bg-purple-100 p-6 rounded-lg shadow hover:shadow-lg">
+        <h4 class="font-bold">Neurology Consultation</h4>
+        <p>Specialist OP for neurological disorders.</p>
+      </div>
+      <div class="bg-purple-100 p-6 rounded-lg shadow hover:shadow-lg">
+        <h4 class="font-bold">Diagnostics</h4>
+        <p>Advanced lab & scanning facilities.</p>
+      </div>
+      <div class="bg-purple-100 p-6 rounded-lg shadow hover:shadow-lg">
+        <h4 class="font-bold">Emergency Care</h4>
+        <p>24/7 Neuro Emergency Services.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Book OP -->
-  <section id="book" class="p-8 bg-purple-50 max-w-4xl mx-auto rounded-lg my-6">
-    <h3 class="text-xl font-bold text-purple-800 mb-4" id="bookTitle">Book OP</h3>
+  <section id="book" class="p-8 bg-purple-50 max-w-4xl mx-auto rounded-lg shadow my-6">
+    <h3 class="text-xl font-bold text-purple-900 mb-4" id="bookTitle">Book OP</h3>
     <form class="space-y-4">
       <input type="text" placeholder="Name / పేరు" id="name" class="w-full border p-2 rounded">
       <input type="text" placeholder="Mobile Number / మొబైల్ నంబర్" id="mobile" class="w-full border p-2 rounded">
@@ -53,15 +102,15 @@
         <option>Dr. Sita (Pediatrics)</option>
       </select>
       <textarea placeholder="Problem / సమస్య" id="problem" class="w-full border p-2 rounded"></textarea>
-      <button type="submit" class="w-full bg-green-600 text-white py-2 rounded">Submit</button>
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg">Submit</button>
     </form>
   </section>
 
   <!-- Track OP -->
-  <section id="track" class="p-8 bg-white max-w-4xl mx-auto rounded-lg my-6">
-    <h3 class="text-xl font-bold text-purple-800 mb-4" id="trackTitle">Track OP</h3>
+  <section id="track" class="p-8 bg-white max-w-4xl mx-auto rounded-lg shadow my-6">
+    <h3 class="text-xl font-bold text-purple-900 mb-4" id="trackTitle">Track OP</h3>
     <input type="text" placeholder="Enter Token / టోకెన్ నంబర్" id="token" class="w-full border p-2 rounded mb-4">
-    <button class="w-full bg-blue-600 text-white py-2 rounded">Track</button>
+    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg">Track</button>
 
     <!-- Dummy Progress UI -->
     <ul class="mt-4 space-y-2">
@@ -75,15 +124,23 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="p-8 bg-purple-50 max-w-4xl mx-auto rounded-lg my-6 text-center">
-    <h3 class="text-xl font-bold text-purple-800 mb-4" id="contactTitle">Contact Us</h3>
+  <section id="contact" class="p-8 bg-purple-50 max-w-4xl mx-auto rounded-lg shadow my-6 text-center">
+    <h3 class="text-xl font-bold text-purple-900 mb-4" id="contactTitle">Contact Us</h3>
     <p class="text-gray-700" id="address">Address: XYZ Road, City</p>
     <p class="text-gray-700" id="phone">Phone: +91 98765 43210</p>
     <p class="text-gray-700" id="email">Email: info@ashwinineuro.com</p>
+    
+    <!-- Action Buttons -->
+    <div class="mt-6 flex flex-wrap justify-center gap-4">
+      <a href="tel:+919876543210" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700">📞 Call Us</a>
+      <a href="mailto:info@ashwinineuro.com" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">📧 Email</a>
+      <a href="https://maps.google.com/?q=Ashwini+Neuro+Hospital" target="_blank" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700">📍 Location</a>
+      <a href="https://wa.me/919876543210" target="_blank" class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600">💬 WhatsApp</a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-purple-700 text-white text-center p-4">
+  <footer class="bg-purple-200 text-purple-900 text-center p-4">
     © 2025 <span id="footerTitle">Ashwini Neuro Super Speciality Hospital</span>. All Rights Reserved.
   </footer>
 

@@ -11,6 +11,7 @@
   <!-- Header -->
   <header class="bg-purple-200 text-purple-900 p-4 flex justify-between items-center shadow">
     <div class="flex items-center space-x-3">
+      <!-- Updated logo path -->
       <img src="image/ashwinii-logo.png" alt="Hospital Logo" class="h-12">
       <h1 class="text-xl font-bold" id="title">Ashwini Neuro Super Speciality Hospital</h1>
     </div>
@@ -23,9 +24,12 @@
       <a href="#track" class="hover:text-purple-600">Track OP</a>
       <a href="#contact" class="hover:text-purple-600">Contact</a>
     </nav>
+    <!-- Language Dropdown -->
     <div>
-      <button onclick="setLang('en')" class="px-2 py-1 bg-white text-purple-700 rounded">EN</button>
-      <button onclick="setLang('te')" class="px-2 py-1 bg-white text-purple-700 rounded">TE</button>
+      <select onchange="setLang(this.value)" class="px-2 py-1 bg-white text-purple-700 rounded">
+        <option value="en">Lan - English</option>
+        <option value="te">Lan - తెలుగు</option>
+      </select>
     </div>
   </header>
 
@@ -130,7 +134,6 @@
     <p class="text-gray-700" id="phone">Phone: +91 98765 43210</p>
     <p class="text-gray-700" id="email">Email: info@ashwinineuro.com</p>
     
-    <!-- Action Buttons -->
     <div class="mt-6 flex flex-wrap justify-center gap-4">
       <a href="tel:+919876543210" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700">📞 Call Us</a>
       <a href="mailto:info@ashwinineuro.com" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">📧 Email</a>
